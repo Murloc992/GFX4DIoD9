@@ -3268,7 +3268,15 @@ void GFX4dIoD9::WrGRAMstart(){
   SPI.beginTransaction(spiSettingsD);
   digitalWrite(_dc, HIGH);  
   digitalWrite(_cs, LOW);
-} 
+}
+
+void GFX4dIoD9::WrGRAMcolor(uint32_t color) {
+  #ifndef ESP32 
+  SPI.write32(color, true);
+  #else
+  SPI.write32(color);
+  #endif
+}
 
 void GFX4dIoD9::WrGRAM16232(uint16_t mcolor, int32_t l) {
   uint32_t tdw;

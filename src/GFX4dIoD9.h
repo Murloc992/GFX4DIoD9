@@ -743,6 +743,7 @@ GFX4dIoD9();
            WrGRAMs16232NT(uint16_t *data, uint16_t l),
            WrGRAMend(),
            WrGRAMstart(),
+           WrGRAMcolor(uint32_t color),
            FillScreen(uint16_t color),
            PutPixel(int16_t x, int16_t y, uint16_t color),
            Font(uint8_t f),
